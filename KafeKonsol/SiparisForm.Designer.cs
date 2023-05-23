@@ -28,222 +28,228 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new Label();
-            this.label2 = new Label();
-            this.label3 = new Label();
-            this.comboBox1 = new ComboBox();
-            this.numericUpDown1 = new NumericUpDown();
-            this.button1 = new Button();
-            this.comboBox2 = new ComboBox();
-            this.button2 = new Button();
-            this.dataGridView1 = new DataGridView();
-            this.button3 = new Button();
-            this.button4 = new Button();
-            this.button5 = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)this.numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            comboBox1 = new ComboBox();
+            numericUpDown1 = new NumericUpDown();
+            comboBox2 = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.label1.Location = new Point(19, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new Size(48, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ürün";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(48, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Ürün";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.label2.Location = new Point(205, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new Size(46, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Adet";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(181, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(46, 21);
+            label2.TabIndex = 1;
+            label2.Text = "Adet";
             // 
             // label3
             // 
-            this.label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.label3.Location = new Point(467, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new Size(81, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Masa No:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new Point(19, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new Size(162, 29);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            this.numericUpDown1.Location = new Point(205, 48);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new Size(120, 29);
-            this.numericUpDown1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.button1.Location = new Point(340, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new Size(75, 29);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "EKLE";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new Point(467, 49);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new Size(99, 29);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            this.button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.button2.Location = new Point(572, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new Size(87, 29);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "TAŞI";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new Point(12, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new Size(401, 330);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            this.button3.BackColor = Color.Red;
-            this.button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.button3.ForeColor = Color.White;
-            this.button3.Location = new Point(449, 287);
-            this.button3.Name = "button3";
-            this.button3.Size = new Size(117, 52);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "SİPARİŞ İPTAL";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            this.button4.BackColor = Color.LimeGreen;
-            this.button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.button4.ForeColor = Color.White;
-            this.button4.Location = new Point(572, 287);
-            this.button4.Name = "button4";
-            this.button4.Size = new Size(117, 52);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "ÖDEME AL";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            this.button5.BackColor = Color.Yellow;
-            this.button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            this.button5.Location = new Point(449, 355);
-            this.button5.Name = "button5";
-            this.button5.Size = new Size(240, 52);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "ANASAYFAYA DÖN";
-            this.button5.UseVisualStyleBackColor = false;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(520, 8);
+            label3.Name = "label3";
+            label3.Size = new Size(77, 21);
+            label3.TabIndex = 2;
+            label3.Text = "Masa No";
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label4.BackColor = Color.Tomato;
-            label4.Font = new Font("Arial Black", 60F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(449, 93);
+            label4.Anchor = AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(551, 277);
             label4.Name = "label4";
-            label4.Size = new Size(240, 164);
-            label4.TabIndex = 12;
-            label4.Text = "00";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            label4.Size = new Size(108, 21);
+            label4.TabIndex = 3;
+            label4.Text = "Ödeme Tutarı:";
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(474, 261);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(665, 277);
             label5.Name = "label5";
-            label5.Size = new Size(112, 21);
-            label5.TabIndex = 13;
-            label5.Text = "Ödeme Tutarı: ";
+            label5.Size = new Size(54, 21);
+            label5.TabIndex = 4;
+            label5.Text = "0,00 ₺";
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(592, 261);
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label6.BackColor = Color.Tomato;
+            label6.Font = new Font("Segoe UI", 60F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(519, 68);
             label6.Name = "label6";
-            label6.Size = new Size(54, 21);
-            label6.TabIndex = 14;
-            label6.Text = "0,00 ₺";
+            label6.Size = new Size(231, 176);
+            label6.TabIndex = 5;
+            label6.Text = "00";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 68);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(433, 350);
+            dataGridView1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(316, 33);
+            button1.Name = "button1";
+            button1.Size = new Size(89, 29);
+            button1.TabIndex = 7;
+            button1.Text = "EKLE";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(652, 32);
+            button2.Name = "button2";
+            button2.Size = new Size(98, 29);
+            button2.TabIndex = 8;
+            button2.Text = "TAŞI";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(520, 325);
+            button3.Name = "button3";
+            button3.Size = new Size(111, 43);
+            button3.TabIndex = 9;
+            button3.Text = "SİPARİŞ AL";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(637, 325);
+            button4.Name = "button4";
+            button4.Size = new Size(111, 43);
+            button4.TabIndex = 10;
+            button4.Text = "ÖDEME AL";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(520, 374);
+            button5.Name = "button5";
+            button5.Size = new Size(228, 43);
+            button5.TabIndex = 11;
+            button5.Text = "ANASAYFAYA DÖN";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(12, 33);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(163, 29);
+            comboBox1.TabIndex = 12;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numericUpDown1.Location = new Point(190, 33);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 29);
+            numericUpDown1.TabIndex = 13;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(520, 32);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(122, 29);
+            comboBox2.TabIndex = 14;
             // 
             // SiparisForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 435);
+            ClientSize = new Size(785, 445);
+            Controls.Add(comboBox2);
+            Controls.Add(numericUpDown1);
+            Controls.Add(comboBox1);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(dataGridView1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(this.button5);
-            Controls.Add(this.button4);
-            Controls.Add(this.button3);
-            Controls.Add(this.dataGridView1);
-            Controls.Add(this.button2);
-            Controls.Add(this.comboBox2);
-            Controls.Add(this.button1);
-            Controls.Add(this.numericUpDown1);
-            Controls.Add(this.comboBox1);
-            Controls.Add(this.label3);
-            Controls.Add(this.label2);
-            Controls.Add(this.label1);
-            MinimumSize = new Size(760, 474);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Name = "SiparisForm";
             Text = "Masa 0";
-            ((System.ComponentModel.ISupportInitialize)this.numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Label label1;
+        private Label label2;
+        private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
+        private DataGridView dataGridView1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private ComboBox comboBox1;
+        private NumericUpDown numericUpDown1;
+        private ComboBox comboBox2;
     }
 }
