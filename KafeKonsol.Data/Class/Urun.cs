@@ -13,7 +13,7 @@ namespace KafeKonsol.Data.Class
 
         public override string? ToString()
         {
-            return base.ToString();
+            return $"{UrunAd} ({BirimFiyat:c2})";
         }
     }
 }

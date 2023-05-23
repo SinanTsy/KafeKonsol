@@ -15,11 +15,12 @@ namespace KafeKonsol.Data.Class
         public DateTime AcilisZamani { get; set; } = DateTime.Now;
         public DateTime? KapanisZamani { get; set; }
         public List<SiparisDetay> SiparisDetaylar { get; set; } = new(); //new List<SiparisDetay>(); //Kullanılabilir
-        public string ToplamTutarTL { get; } = string.Empty;
+        public string ToplamTutarTL => ToplamTutar().ToString("c2");
 
-        public decimal ToplamTutar()
-        {
-            return 0;
-        }
+        public decimal ToplamTutar() => SiparisDetaylar.Sum(x => x.Tutar());
+
+
+
+
     }
 }
