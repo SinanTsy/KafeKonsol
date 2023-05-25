@@ -30,12 +30,14 @@
         {
             label1 = new Label();
             label2 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            nudBirimFiyat = new NumericUpDown();
+            btnEkle = new Button();
+            dgvUrunler = new DataGridView();
+            txtUrunAd = new TextBox();
+            btnIptal = new Button();
+            btnDuzenle = new Button();
+            ((System.ComponentModel.ISupportInitialize)nudBirimFiyat).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -58,58 +60,91 @@
             label2.TabIndex = 10;
             label2.Text = "Birim Fiyatı (₺)";
             // 
-            // numericUpDown1
+            // nudBirimFiyat
             // 
-            numericUpDown1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            numericUpDown1.Location = new Point(200, 43);
-            numericUpDown1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 29);
-            numericUpDown1.TabIndex = 12;
+            nudBirimFiyat.DecimalPlaces = 2;
+            nudBirimFiyat.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            nudBirimFiyat.Location = new Point(200, 43);
+            nudBirimFiyat.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            nudBirimFiyat.Name = "nudBirimFiyat";
+            nudBirimFiyat.Size = new Size(120, 29);
+            nudBirimFiyat.TabIndex = 12;
             // 
-            // button1
+            // btnEkle
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(333, 43);
-            button1.Name = "button1";
-            button1.Size = new Size(86, 29);
-            button1.TabIndex = 13;
-            button1.Text = "EKLE";
-            button1.UseVisualStyleBackColor = true;
+            btnEkle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEkle.Location = new Point(333, 43);
+            btnEkle.Name = "btnEkle";
+            btnEkle.Size = new Size(86, 29);
+            btnEkle.TabIndex = 13;
+            btnEkle.Text = "EKLE";
+            btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
-            // dataGridView1
+            // dgvUrunler
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(483, 359);
-            dataGridView1.TabIndex = 14;
+            dgvUrunler.AllowUserToAddRows = false;
+            dgvUrunler.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUrunler.Location = new Point(12, 88);
+            dgvUrunler.MultiSelect = false;
+            dgvUrunler.Name = "dgvUrunler";
+            dgvUrunler.ReadOnly = true;
+            dgvUrunler.RowHeadersVisible = false;
+            dgvUrunler.RowTemplate.Height = 25;
+            dgvUrunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUrunler.Size = new Size(499, 388);
+            dgvUrunler.TabIndex = 14;
             // 
-            // textBox1
+            // txtUrunAd
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(12, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(162, 29);
-            textBox1.TabIndex = 15;
+            txtUrunAd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUrunAd.Location = new Point(12, 43);
+            txtUrunAd.Name = "txtUrunAd";
+            txtUrunAd.Size = new Size(162, 29);
+            txtUrunAd.TabIndex = 15;
+            // 
+            // btnIptal
+            // 
+            btnIptal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnIptal.Location = new Point(425, 43);
+            btnIptal.Name = "btnIptal";
+            btnIptal.Size = new Size(86, 29);
+            btnIptal.TabIndex = 16;
+            btnIptal.Text = "İPTAL";
+            btnIptal.UseVisualStyleBackColor = true;
+            btnIptal.Visible = false;
+            btnIptal.Click += btnIptal_Click;
+            // 
+            // btnDuzenle
+            // 
+            btnDuzenle.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDuzenle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDuzenle.Location = new Point(412, 482);
+            btnDuzenle.Name = "btnDuzenle";
+            btnDuzenle.Size = new Size(99, 44);
+            btnDuzenle.TabIndex = 17;
+            btnDuzenle.Text = "DÜZENLE";
+            btnDuzenle.UseVisualStyleBackColor = true;
+            btnDuzenle.Click += btnDuzenle_Click;
             // 
             // UrunlerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(507, 459);
-            Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(numericUpDown1);
+            ClientSize = new Size(523, 534);
+            Controls.Add(btnDuzenle);
+            Controls.Add(btnIptal);
+            Controls.Add(txtUrunAd);
+            Controls.Add(dgvUrunler);
+            Controls.Add(btnEkle);
+            Controls.Add(nudBirimFiyat);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UrunlerForm";
             Text = "Ürünler";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudBirimFiyat).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUrunler).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,9 +153,11 @@
 
         private Label label1;
         private Label label2;
-        private NumericUpDown numericUpDown1;
-        private Button button1;
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private NumericUpDown nudBirimFiyat;
+        private Button btnEkle;
+        private DataGridView dgvUrunler;
+        private TextBox txtUrunAd;
+        private Button btnIptal;
+        private Button btnDuzenle;
     }
 }
