@@ -64,7 +64,6 @@
             // dgvSiparisler
             // 
             dgvSiparisler.AllowUserToAddRows = false;
-            dgvSiparisler.AllowUserToDeleteRows = false;
             dgvSiparisler.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvSiparisler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSiparisler.Location = new Point(12, 33);
@@ -91,7 +90,6 @@
             // dgvDetaylar
             // 
             dgvDetaylar.AllowUserToAddRows = false;
-            dgvDetaylar.AllowUserToDeleteRows = false;
             dgvDetaylar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvDetaylar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDetaylar.Location = new Point(12, 33);

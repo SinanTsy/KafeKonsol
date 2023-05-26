@@ -23,7 +23,7 @@ namespace KafeKonsol
 
         private void dgvSiparisler_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvSiparisler.SelectedRows.Count ==0)
+            if (dgvSiparisler.SelectedRows.Count == 0)
             {
                 dgvDetaylar.DataSource = null;
             }
@@ -31,7 +31,7 @@ namespace KafeKonsol
             {
                 var seciliSatir = dgvSiparisler.SelectedRows[0];
                 var siparis = (Siparis)seciliSatir.DataBoundItem;
-                dgvDetaylar.DataSource = siparis;
+                dgvDetaylar.DataSource = siparis.SiparisDetaylar;
             }
         }
     }

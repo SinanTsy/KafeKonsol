@@ -14,6 +14,8 @@ namespace KafeKonsol
 {
     public partial class SiparisForm : Form
     {
+        public event EventHandler<MasaTasindiEventArgs>? MasaTasindi;
+
         private readonly KafeVeri _db;
         private readonly Siparis _siparis;
         private readonly BindingList<SiparisDetay> _siparisDetaylar;
@@ -42,6 +44,22 @@ namespace KafeKonsol
             lblMasaNo.Text = _siparis.MasaNo.ToString("00");
             lblOdemeTutari.Text = _siparis.ToplamTutarTL;
             cboUrun.DataSource = _db.Urunler;
+            MasaNolariYukle();
+        }
+
+        private void MasaNolariYukle()
+        {
+            cboMasaNo.Items.Clear();
+            for (int i = 1; i <= _db.MasaAdet; i++)
+            {
+                if (!_db.AktifSiparisler.Any(x => x.MasaNo == i))
+                {
+                    cboMasaNo.Items.Add(i);
+                }
+            }
+
+            // YÖNTEM 2
+            //cboMasaNo.Items.Add(Enumerable.Range(1, _db.MasaAdet).Where(i => !_db.AktifSiparisler.Any(x => x.MasaNo == i)).ToList());
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -92,6 +110,21 @@ namespace KafeKonsol
             _siparis.KapanisZamani = DateTime.Now;
             _db.AktifSiparisler.Remove(_siparis);
             _db.GecmisSiparisler.Add(_siparis);
+        }
+
+        private void btnMasaTasi_Click(object sender, EventArgs e)
+        {
+            if (cboMasaNo.SelectedIndex == -1) return;
+            int eskiMasaNo = _siparis.MasaNo;
+            int hedefMasaNo = (int)cboMasaNo.SelectedItem;
+            _siparis.MasaNo = hedefMasaNo;
+            Guncelle();
+
+            if (MasaTasindi != null)
+            {
+                var args = new MasaTasindiEventArgs(eskiMasaNo, hedefMasaNo);
+                MasaTasindi(this, args);
+            }
         }
     }
 }

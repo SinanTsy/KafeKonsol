@@ -96,6 +96,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kafe Konsol";
             FormClosing += AnaForm_FormClosing;
+            DoubleClick += AnaForm_DoubleClick;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

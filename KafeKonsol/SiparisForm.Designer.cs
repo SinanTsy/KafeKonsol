@@ -184,6 +184,7 @@
             btnMasaTasi.TabIndex = 8;
             btnMasaTasi.Text = "TAŞI";
             btnMasaTasi.UseVisualStyleBackColor = true;
+            btnMasaTasi.Click += btnMasaTasi_Click;
             // 
             // btnIptal
             // 
