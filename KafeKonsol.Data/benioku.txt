@@ -33,3 +33,28 @@ KafeVeri
 
 * Property
 - Method
+
+
+--Serialization--
+Bellekteki bir nesnenin belirli bir formatta kodlanarak harddiskte kaydedilmeye hazır hale dönüştürülmesi işlemi
+// tersine olaya da DeSerialization
+
+Örneğin;
+Bir kişi nesnesi oluşturunuz:
+Kisi k = new Kisi() {Ad= "Ali", Yas = 33};
+
+XML Serialization ile serilize edilmiş olsaydı:
+
+<Kisi>
+	<Ad>Ali</Ad>
+	<Yas>33</Yas>
+</Kisi>
+
+JSON Serialization ile serilize edilmiş olsaydı:
+{
+	"Ad": "Ali",
+	"Yas": 33;
+}
+
+
+// Bir veri yapısı veya nesne serileştirildiğinde, veri veya nesne bellekten çıkartılır ve belirli bir formata dönüştürülerek diskte veya ağ üzerindeki bir bağlantı noktasında taşınabilir hale getirilir. Serileştirme işlemi genellikle metin tabanlı bir formata (örneğin JSON veya XML) veya binary formata dönüştürme işlemi olarak gerçekleştirilir.

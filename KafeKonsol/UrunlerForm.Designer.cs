@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             nudBirimFiyat = new NumericUpDown();
             btnEkle = new Button();
             dgvUrunler = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             txtUrunAd = new TextBox();
             btnIptal = new Button();
             btnDuzenle = new Button();
@@ -85,7 +88,10 @@
             // 
             dgvUrunler.AllowUserToAddRows = false;
             dgvUrunler.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvUrunler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvUrunler.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUrunler.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
             dgvUrunler.Location = new Point(12, 88);
             dgvUrunler.MultiSelect = false;
             dgvUrunler.Name = "dgvUrunler";
@@ -95,6 +101,24 @@
             dgvUrunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUrunler.Size = new Size(499, 388);
             dgvUrunler.TabIndex = 14;
+            // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "UrunAd";
+            Column1.HeaderText = "Ürün Adı";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 79;
+            // 
+            // Column2
+            // 
+            Column2.DataPropertyName = "BirimFiyat";
+            dataGridViewCellStyle1.Format = "c2";
+            Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            Column2.HeaderText = "Birim Fiyatı";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 91;
             // 
             // txtUrunAd
             // 
@@ -159,5 +183,7 @@
         private TextBox txtUrunAd;
         private Button btnIptal;
         private Button btnDuzenle;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
     }
 }

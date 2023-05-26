@@ -7,6 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,15 +19,10 @@ namespace KafeKonsol
         KafeVeri db = new KafeVeri();
         public AnaForm()
         {
+            VerileriAl();
             InitializeComponent();
             MasalariYukle();
-            OrnekUrunleriYukle();
-        }
 
-        private void OrnekUrunleriYukle()
-        {
-            db.Urunler.Add(new Urun() { UrunAd = "Kola", BirimFiyat = 20m });
-            db.Urunler.Add(new Urun() { UrunAd = "Ayran", BirimFiyat = 15m });
         }
 
         private void MasalariYukle()
@@ -34,7 +31,7 @@ namespace KafeKonsol
             {
                 var lvi = new ListViewItem($"Masa {i}");
                 lvi.Tag = i;
-                lvi.ImageKey = "bos";
+                lvi.ImageKey = db.AktifSiparisler.Any(x => x.MasaNo == i) ? "dolu" : "bos";
                 lvwMasalar.Items.Add(lvi);
             }
         }
@@ -61,7 +58,6 @@ namespace KafeKonsol
             {
                 lviTiklanan.ImageKey = "bos";
             }
-
         }
 
         private void tsmiGecmisSiparisler_Click(object sender, EventArgs e)
@@ -73,5 +69,35 @@ namespace KafeKonsol
         {
             new UrunlerForm(db).ShowDialog();
         }
+
+        private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            VerileriKaydet();
+        }
+
+        private void VerileriKaydet()
+        {
+            string json = JsonSerializer.Serialize(db);
+            File.WriteAllText("veri.json", json);
+        }
+        private void VerileriAl()
+        {
+            try
+            {
+                string json = File.ReadAllText("veri.json");
+                db = JsonSerializer.Deserialize<KafeVeri>(json)!; //?? new(); // ?? null durumu kontrolü için
+            }
+            catch (Exception)
+            {
+                OrnekUrunleriYukle();
+            }
+        }
+        private void OrnekUrunleriYukle()
+        {
+            db.Urunler.Add(new Urun() { UrunAd = "Kola", BirimFiyat = 20m });
+            db.Urunler.Add(new Urun() { UrunAd = "Ayran", BirimFiyat = 15m });
+        }
+
+
     }
 }
